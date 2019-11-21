@@ -22,6 +22,8 @@ namespace GroceryStoreAPI.Models
 
             var vm = new ProductCollectionViewModel(requestPath, data);
 
+            vm.AddLink("add", "/Customers/AddProduct");
+
             return vm;
         }
     }

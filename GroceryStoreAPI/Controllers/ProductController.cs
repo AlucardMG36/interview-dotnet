@@ -53,18 +53,13 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // POST: api/Product
-        [HttpPost]
-        public IActionResult Post([FromBody] Product value)
+        [HttpPost("AddProduct")]
+        [ProducesResponseType(201)]
+        public IActionResult AddProduct([FromBody] Product value)
         {
             _products.Add(value);
 
             return Created(Request.Path.Value, value);
         }
-
-        // DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

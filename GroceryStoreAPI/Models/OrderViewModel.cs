@@ -16,7 +16,7 @@ namespace GroceryStoreAPI.Models
 
         internal static OrderViewModel From(HttpRequest request, Order order)
         {
-            var selfUrl = $"{request.Path}/{order.Id}";
+            var selfUrl = $"{request.Path}/GetByOrderId?id={order.Id}";
 
             var vm = new OrderViewModel(selfUrl, order);
 

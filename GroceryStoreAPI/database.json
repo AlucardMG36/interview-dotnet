@@ -29,8 +29,8 @@
       ]
     },
     {
-      "id": "2",
-      "customerId": "3",
+      "id": 2,
+      "customerId": 3,
       "items": [
         {
           "productId": 2,

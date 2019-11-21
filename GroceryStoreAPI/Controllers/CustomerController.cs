@@ -60,9 +60,9 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // POST: api/Customer
-        [HttpPost("AddNewCustomer")]
+        [HttpPost("AddCustomer")]
         [ProducesResponseType(201)]
-        public IActionResult Post([FromBody] Customer customer)
+        public IActionResult AddCustomer([FromBody] Customer customer)
         {
           _customers.Add(customer);
 

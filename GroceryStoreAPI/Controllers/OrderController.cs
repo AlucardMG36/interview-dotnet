@@ -71,8 +71,9 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // POST: api/Order
-        [HttpPost]
-        public IActionResult Post([FromBody] Order order)
+        [HttpPost("AddOrder")]
+        [ProducesResponseType(201)]
+        public IActionResult AddOrder([FromBody] Order order)
         {
             _orders.Add(order);
 

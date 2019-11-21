@@ -1,9 +1,7 @@
 ﻿using GroceryStore.Core.Entities;
 using Microsoft.AspNetCore.Http;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace GroceryStoreAPI.Models
 {
@@ -21,6 +19,8 @@ namespace GroceryStoreAPI.Models
             var data = orders.Select(x => OrderViewModel.From(request, x));
 
             var vm = new OrderCollectionViewModel(requestPath, data);
+
+            vm.AddLink("add", "/Order/AddOrder");
 
             return vm;
         }

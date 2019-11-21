@@ -16,7 +16,7 @@ namespace GroceryStoreAPI.Models
 
         internal static ProductViewModel From(HttpRequest request, Product product)
         {
-            var selfUrl = $"{request.Path}/{product.Id}";
+            var selfUrl = $"{request.Path}/GetProductbyId?id={product.Id}";
 
             var vm = new ProductViewModel(selfUrl, product);
 

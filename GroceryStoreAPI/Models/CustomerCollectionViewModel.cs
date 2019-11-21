@@ -20,6 +20,8 @@ namespace GroceryStoreAPI.Models
 
             var vm = new CustomerCollectionViewModel(requestPath, data);
 
+            vm.AddLink("add", "/Customer/AddCustomer");
+
             return vm;
         }
     }
