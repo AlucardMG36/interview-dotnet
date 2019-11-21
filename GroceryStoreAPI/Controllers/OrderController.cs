@@ -24,6 +24,8 @@ namespace GroceryStoreAPI.Controllers
 
         // GET: api/Order
         [HttpGet]
+        [ProducesResponseType(200, Type= typeof(OrderCollectionViewModel))]
+        [ProducesResponseType(204)]
         public ActionResult<ViewModelCollection<Order>> GetOrders()
         {
             var orders = _orders.GetAll();
@@ -40,6 +42,8 @@ namespace GroceryStoreAPI.Controllers
 
         // GET: api/Order/5
         [HttpGet("GetByOrderId")]
+        [ProducesResponseType(200, Type =typeof(OrderViewModel))]
+        [ProducesResponseType(204)]
         public ActionResult<ViewModel<Order>> GetByOrderId([FromQuery]int id)
         {
             var order = _orders.WithId(id);
@@ -56,6 +60,8 @@ namespace GroceryStoreAPI.Controllers
         }
 
         [HttpGet("GetByCustomerId")]
+        [ProducesResponseType(200, Type= typeof(OrderCollectionViewModel))]
+        [ProducesResponseType(204)]
         public ActionResult<ViewModelCollection<Order>> GetbyCustomerId([FromQuery]int customerId)
         {
             var customerOrders = _orders.ByCustomer(customerId);

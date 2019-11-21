@@ -20,6 +20,8 @@ namespace GroceryStoreAPI.Controllers
 
         // GET: api/Product
         [HttpGet]
+        [ProducesResponseType(200, Type=typeof(ProductCollectionViewModel))]
+        [ProducesResponseType(204)]
         public ActionResult<ViewModelCollection<Product>> GetProducts()
         {
             var products = _products.GetAll();
