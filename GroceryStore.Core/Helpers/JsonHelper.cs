@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace GroceryStore.Data.Helpers
+namespace GroceryStore.Core.Helpers
 {
     public static class JsonHelper
     {

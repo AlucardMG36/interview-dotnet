@@ -27,7 +27,7 @@ namespace GroceryStoreAPI.Controllers
         [HttpGet]
         [ProducesResponseType(200, Type= typeof(CustomerCollectionViewModel))]
         [ProducesResponseType(204)]
-        public ActionResult<ViewModelCollection<Customer>> Get()
+        public ActionResult<ViewModelCollection<Customer>> GetAll()
         {
             var customers = _customers.GetAll();
 
@@ -42,8 +42,10 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // GET: api/Customer/5
-        [HttpGet("{id}")]
-        public ActionResult<ViewModel<Customer>> Get([FromQuery]int id)
+        [HttpGet("GetCustomerById")]
+        [ProducesResponseType(200, Type= typeof(CustomerViewModel))]
+        [ProducesResponseType(204)]
+        public ActionResult<ViewModel<Customer>> GetById([FromQuery]int id)
         {
             var customer = _customers.WithId(id);
 
@@ -58,9 +60,13 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // POST: api/Customer
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("AddNewCustomer")]
+        [ProducesResponseType(201)]
+        public IActionResult Post([FromBody] Customer customer)
         {
+          _customers.Add(customer);
+
+            return Created(Request.Path.Value, customer);
         }
     }
 }

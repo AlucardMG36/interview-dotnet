@@ -44,7 +44,7 @@ namespace GroceryStoreAPI.Models
         public IEnumerable<Error> Errors => _errors;
 
         public IEnumerable<Link> Links => _links;
-
+        
         public Error AddError(string message, int statusCode)
         {
             EnsureDataHasNotBeenSet();
@@ -67,9 +67,7 @@ namespace GroceryStoreAPI.Models
             return link;
         }
 
-
         public Link GetLink(string name) => Links.SingleOrDefault(c => c.Name.Equals(name));
-
 
         private void EnsureDataHasNotBeenSet()
         {

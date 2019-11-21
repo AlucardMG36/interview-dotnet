@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GroceryStore.Core.Accessors
 {
-    public interface ICustomerAccessor: IAccessor<Customer>
+    public interface ICustomerAccessor : IAccessor<Customer>
     {
     }
 }

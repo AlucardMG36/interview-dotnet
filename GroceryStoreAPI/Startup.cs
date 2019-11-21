@@ -1,4 +1,5 @@
-﻿using GroceryStoreAPI.Filters;
+﻿using GroceryStore.Data.Extensions;
+using GroceryStoreAPI.Filters;
 using GroceryStoreAPI.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -53,6 +54,8 @@ namespace GroceryStoreAPI
 
                 c.CustomSchemaIds(i => i.FullName);
             });
+
+            services.AddDataAccessServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
